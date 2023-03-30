@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CollectGpsData": {
+      "commandName": "Project",
+      "commandLineArgs": "COM8"
+    }
+  }
+}
