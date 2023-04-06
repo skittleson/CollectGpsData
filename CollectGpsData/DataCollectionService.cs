@@ -20,7 +20,7 @@ namespace CollectGpsData
         public async Task RunAsync()
         {
             await _provider.OpenAsync();
-            while (!_cancellationToken.IsCancellationRequested)
+            do
             {
                 try
                 {
@@ -44,7 +44,7 @@ namespace CollectGpsData
                     }
                     // nothing needs to be done here since we are closing the connections
                 }
-            }
+            } while (!_cancellationToken.IsCancellationRequested);
         }
 
     }

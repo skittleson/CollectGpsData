@@ -36,11 +36,9 @@ namespace CollectGpsData
         public async Task OpenAsync()
         {
             await _connection.OpenAsync(_cancellationToken);
-            await ExecuteNonQueryAsync(@"
-CREATE TABLE IF NOT EXISTS gps (
-	timestamp INTEGER PRIMARY KEY,
-	raw TEXT NOT NULL
-);");
+            await ExecuteNonQueryAsync(@"CREATE TABLE IF NOT EXISTS gps (
+	            timestamp INTEGER PRIMARY KEY,
+	            raw TEXT NOT NULL);");
             _device?.Open();
         }
 
